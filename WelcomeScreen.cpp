@@ -15,7 +15,7 @@ void WelcomeScreen::Intro()
     asctime_s(timeString, sizeof(timeString), &timeInfo);  
 
     srand(time(NULL));
-    int RandomQuote = rand() % 20;  
+    int RandomQuote = rand() % 21;  
     std::string ASCII = R"(
 
 
@@ -26,14 +26,14 @@ void WelcomeScreen::Intro()
  _|    _|   _|    _|   _|    _|    _|         _|   _|    _|   _|    _|   _|            
    _|_|_|     _|_|_|   _|    _|    _|   _|_|_|       _|_|_|   _|    _|     _|_|_|      
                   _|                                     _|                            
-              _|_|                                   _|_|                              v0.10_git
+              _|_|                                   _|_|                              v0.13_git⌂
 
                                                                                          
 )";
-    std::string Quotes[] = { "This shit works OFFLINE!", "Greetings From Amsterdam!", "Hit that new PR Today!", "one more scoop of pre-workout sire", "windows-only", "Made with Love", "Never Gonna Give You Up!", "tell everyon' bout us", "What are we listening today? Metal? Rap? Girly Music? Tiktok Songs? Voicemessages from a ex?", "Did you take enough protein today?", "Eat a banana once in a while!", "WinterArc Has Started..", "Did you know that this is an array?", "i just killed my ex... i still love him THOUGH?", "Quality over Quanity! (with your reps ofcourse)", "Now without MicroTransactions!", "sending shitty ad data to google... jk", "GYMRATS ASSEMBLE!", "Don't Skip Legday!", "Track all those damn calories!", "50 Notifications from your phone warning that your headphones are too loud..." };
+    std::string Quotes[] = { "Works without the need of a connection!", "Greetings From Amsterdam!", "Hit that new PR Today!", "one more scoop of pre-workout sire", "windows-only. mac? linux? only NT Technology.", "Made with Love", "Never Gonna Give You Up!", "tell everyon' bout us", "What are we listening today? Metal? Rap? Girly Music? Tiktok Songs? Voicemessages from a ex?", "Did you take enough protein today?", "Eat a banana once in a while!", "WinterArc Has Started..", "Did you know that this is an array?", "i just killed my ex... i still love him THOUGH? - SZA", "Quality over Quanity! (with your reps ofcourse)", "Now without MicroTransactions!", "sending ad statics data to google...../s", "GYMRATS ASSEMBLE!", "Don't Skip Legday!", "Track all those damn calories!", "50 Notifications from your phone warning that your headphones are too loud..." };
     int consoleWidth = 90; 
 
-    std::string text = "GymSync Console DEV - Windows Build.";
+    std::string text = "GymSync Console - Windows Build.";
     int padding = (consoleWidth - text.size()) / 2;
     std::cout << std::string(padding, ' ') << text << " " << timeString << std::endl;
     Sleep(1000);

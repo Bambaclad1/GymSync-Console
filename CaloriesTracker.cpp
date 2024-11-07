@@ -13,23 +13,30 @@ CaloriesTracker::CaloriesTracker()
 
 void CaloriesTracker::MainMenu()
 {
+	std::string MenuArt = R"(
+		   Calorie Tracker Module
+
+            _________________________________________
+           |                                         |
+           | [1] Track Food                          |
+           | [2] Check Diary                         |
+           | [3] Exit                                |
+           |                                         |
+           |_________________________________________|
+    )";
 	bool switching = true;
 	int menu = 0;
 	while (switching) {
-		std::cout << "\n" << "You are now in the GymSync Calorie Tracker Module." << "\n";
-		std::cout << "[1]Track food\n";
-		std::cout << "[2]Check Diary\n";
-		std::cout << "[3]Exit\n";
-
+		std::cout << MenuArt;
 		std::cin >> menu;
 
 		switch (menu) {
 		case 1:
-			switching = false;
+
 			break;
 		case 2:
 			Diary(foods);
-			switching = false;
+
 			break;
 		case 3:
 			switching = false;
@@ -53,6 +60,13 @@ void CaloriesTracker::PrintBreakfastFoods(std::vector<Food>& foods)
 			std::cout << "Amount: " << food.Amount << " " << food.Unit << std::endl;
 
 			std::cout << "Calories: " << food.Calories << "kcal | " << "Carbs: " << food.Carbs << "g | " << "Fats: " << food.Fats << "g | " << "Protein: " << food.Protein << "g" << std::endl;
+			if (food.Fibers > 0) {
+				std::cout << "Fibers: " << food.Fibers << "g | ";
+			}
+
+			if (food.Sugars > 0) {
+				std::cout << "Sugars: " << food.Sugars  << "g" << std::endl;
+			}
 			std::cout << "------------------------" << std::endl;
 		}
 	}

@@ -1,5 +1,4 @@
-#include <iostream>
-
+﻿#include <iostream>
 #include "WelcomeScreen.h"
 #include "CaloriesTracker.h"
 
@@ -22,32 +21,35 @@ int main()
 
 void menu() {
 	CaloriesTracker caltr;
-
+	std::string MenuArt = R"(
+                   GymSync Offline Menu
+				
+            _________________________________________
+           |                                         |
+           | [1] Calorie Tracker                     |
+           | [2] Workout Logger                      |
+           | [3] Sync Devices                        |
+           | [4] Profile                             |
+           |                                         |
+           |_________________________________________|
+    )";
 	system("cls");
 	bool switching = true;
 	int menu = 0;
 	while (switching) {
-		std::cout << "GymSync Offline Menu\n";
-		std::cout << "[1] Calorie Tracker\n";
-		std::cout << "[2] Workout Logger\n";
-		std::cout << "[3] Sync Devices\n";
-		std::cout << "[4] Profile\n";
+		std::cout << MenuArt;
 		std::cin >> menu;
 
 
 		switch (menu) {
 		case 1:
 			caltr.MainMenu();
-			switching = false;
 			break;
 		case 2:
-			switching = false;
 			break;
 		case 3:
-			switching = false;
 			break;
 		case 4:
-			switching = false;
 			break;
 		}
 	}
