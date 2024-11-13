@@ -2,6 +2,8 @@
 #include <windows.h>
 #include <iostream>
 #include <vector>
+#include <sstream>
+#include <algorithm>
 
 
 
@@ -14,13 +16,13 @@ public:
 		std::string Name;
 		std::string Description;
 		std::string Unit;
-		int Amount;
-		int Calories;
-		int Carbs;
-		int Protein;
-		int Fibers;
-		int Sugars;
-		int Fats;
+		float Amount;
+		float Calories;
+		float Carbs;
+		float Protein;
+		float Fibers;
+		float Sugars;
+		float Fats;
 		bool IsBreakfest = false;
 		bool IsLunch = false;
 		bool IsDinner = false;
@@ -32,13 +34,14 @@ public:
 	CaloriesTracker();
 	void MainMenu();
 	void Diary(std::vector<Food>& foods);
-	void PrintBreakfastFoods(std::vector<Food>& foods);
-
+	void PrintDiary(std::vector<Food>& foods);
+	void TrackFood(std::vector<Food>& foods);
+	float convertInputToFloat(const std::string& input);
 
 
 	private:
 
 
-
+		
 };
 
