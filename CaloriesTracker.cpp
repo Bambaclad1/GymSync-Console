@@ -16,6 +16,9 @@ CaloriesTracker::CaloriesTracker()
 	Food MacaroniGehaktGroente = { "Macaroni Met Gehakt En Groente ", "", "Gram", 450, 557, 69, 27, 0, 0, 21, false, false, true, false };
 	foods.push_back(MacaroniGehaktGroente);
 
+	Food maca = { "macatest Met Gehakt En Groente ", "", "Gram", 450, 557, 69, 27, 0, 0, 21, true, false, false, false };
+	foods.push_back(maca);
+
 	Food WheyScoop = { "Vanilla Flavour", "Whey Perfection", "1 maatschep (28g)", 28, 103, 1.5, 22.2, 0, 0, 1, false, false, false, true };
 	foods.push_back(WheyScoop);
 
@@ -62,6 +65,7 @@ void CaloriesTracker::Diary(std::vector<Food>& foods)
 
 void CaloriesTracker::PrintDiary(std::vector<Food>& foods)
 {
+	
 	for (const auto& food : foods) {
 		if (food.IsBreakfest) {
 			std::cout << std::endl << "Breakfest" << std::endl;
@@ -155,35 +159,40 @@ void CaloriesTracker::TrackFood(std::vector<Food>& foods)
 	std::cout << "Please input the following to put some food. Enter 0 as value if its unknown." << std::endl;
 
 	std::cout << std::endl << "Product Name: ";
-	std::cin.ignore(); 
-	std::cin >> Name;
+	std::getline(std::cin >> std::ws, Name);  
 
 	std::cout << std::endl << "Product Description: ";
-	std::cin >> Description;
+	std::getline(std::cin >> std::ws, Description);
 
 	std::cout << std::endl << "Product Unit (gram, liter..): ";
-	std::cin >> Unit;
+	std::getline(std::cin >> std::ws, Unit);
 
 	std::cout << std::endl << "Product Amount (how much gram/liter...): ";
 	std::cin >> input;
 	Amount = convertInputToFloat(input);
 
 	std::cout << std::endl << "Product Calories per " << Amount << " " << Unit << ":";
+	std::cin >> input;
 	Calories = convertInputToFloat(input);
 
 	std::cout << std::endl << "Product Carbs per " << Amount << " " << Unit << ":";
+	std::cin >> input;
 	Carbs = convertInputToFloat(input);
 
 	std::cout << std::endl << "Product Proteins per " << Amount << " " << Unit << ":";
+	std::cin >> input;
 	Protein = convertInputToFloat(input);
 
 	std::cout << std::endl << "Product Fibers per " << Amount << " " << Unit << ":";
+	std::cin >> input;
 	Fibers = convertInputToFloat(input);
 
 	std::cout << std::endl << "Product Sugars per " << Amount << " " << Unit << ":";
+	std::cin >> input;
 	Sugars = convertInputToFloat(input);
 
 	std::cout << std::endl << "Product Fats per " << Amount << " " << Unit << ":";
+	std::cin >> input;
 	Fats = convertInputToFloat(input);
 
 	system("cls");
